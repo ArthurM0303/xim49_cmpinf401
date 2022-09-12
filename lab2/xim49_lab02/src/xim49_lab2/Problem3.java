@@ -1,4 +1,4 @@
-package xim49_Assignment1;
+package xim49_lab2;
 import javax.swing.JOptionPane;
 public class Problem3 {
 

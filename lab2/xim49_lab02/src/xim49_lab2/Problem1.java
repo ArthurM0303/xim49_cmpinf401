@@ -1,8 +1,8 @@
 
-package xim49_Assignment1;
+package xim49_lab2;
 import javax.swing.JOptionPane;
 
-public class SolvePythagoreanTheorem {
+public class Problem1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
