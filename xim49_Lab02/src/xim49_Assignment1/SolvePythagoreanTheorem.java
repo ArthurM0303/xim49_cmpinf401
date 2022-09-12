@@ -22,10 +22,16 @@ public class SolvePythagoreanTheorem {
 		double b = Math.pow(y, 2);
 		
 		z = Math.sqrt(a+b);
+		                   // calculate z
+		z = z*100;
 		
+		int r = (int) Math.round(z);
 		
+		z = r / 100.0;
 		
-	    System.out.println(z);
+		String sz = Double.toString(z);
+		
+		JOptionPane.showMessageDialog(null, "The hypotenuse is" + " " + sz, sz, 0);
 		
 		
 		
