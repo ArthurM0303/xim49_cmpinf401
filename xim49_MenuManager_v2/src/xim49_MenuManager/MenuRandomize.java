@@ -14,7 +14,7 @@ public MenuRandomize(String entreeFile, String sideFile, String saladFile, Strin
     salad= FileManager.readSalads(saladFile);
 }
 
-public randomMenu() {
+public void randomMenu() {
     ArrayList<Menu> menu;
     int indexEntrees=(int) Math.random() * entree.size() - 1;
     entree = entrees.get(indexEntrees);
@@ -28,6 +28,6 @@ public randomMenu() {
     int indexSide=(int) Math.random() * side.size() - 1;
     entree = sides.get(indexSide);
 
-    return null; //<--- return Menu?
+    return; //<--- return Menu?
 }
 }
