@@ -1,31 +1,25 @@
 package xim49_MenuManager;
 
-public final class Dessert extends MenuItem {
-
-public Dessert (String name, String description, int calories, double price){
-super(name, description, calories, price);
-}
-
-// public Dessert(String cake, String real_cake, int i){
-// super();
-// }
+public class MenuItem {
 
 private String name = null;
 private String description = null;
 private int calories = 0;
+private double price = 0.0;
 
-public Dessert ()
-{
+//null constructor is provided in case any menu lacks one of the 4 dish types
+public MenuItem () {
 this.name = null;
 this.description = null;
 this.calories = 0;
+this.price = 0.0;
 }
 
-public Dessert (String name, String description, int calories)
-{
+public MenuItem (String name, String description, int calories, double price) {
 this.name = name;
 this.description = description;
 this.calories = calories;
+this.price = price;
 }
 
 public String getName() {
@@ -52,6 +46,19 @@ return calories;
 
 public void setCalories(int calories) {
 this.calories = calories;
+}
+
+public double getPrice() {
+return price;
+}
+
+public void setPrice (double price){
+this.price=price;
+}
+
+@Override
+public String toString() {
+return this.getName();
 }
 
 }

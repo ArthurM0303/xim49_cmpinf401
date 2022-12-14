@@ -56,15 +56,9 @@ public class Menu {
 	 * Calculate total amount of the calories for all dishes on the menu
 	 * @return the amount of total calories (int)
 	 */
-	public int totalCalories() {
-		if(salad != null) {
-			System.out.println(entree.getCalories() + salad.getCalories() + side.getCalories() + dessert.getCalories());
+	public int totalCalories (){
+		return entree.getCalories() + side.getCalories() + salad.getCalories() + dessert.getCalories();
 		}
-		else {
-			System.out.println(entree.getCalories() + side.getCalories());
-		}
-		return 0;
-	}
 
 	/**
 	 * Pulls out the description of all the dishes on the menu
