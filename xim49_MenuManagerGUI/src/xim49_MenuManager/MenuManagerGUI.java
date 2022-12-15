@@ -4,7 +4,10 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.swing.*;
-
+/**
+*
+* @author xinYiMing
+*/
 public class MenuManagerGUI extends JFrame {
 
 	private JButton createCustomMenuButton, deleteMenuButton, maxCaloriesMenuButton, menuDetailsButton,
@@ -297,7 +300,7 @@ public class MenuManagerGUI extends JFrame {
 	 */
 	private void createRandomMenu(ActionEvent evt) {
 		String name = JOptionPane.showInputDialog("What would like to name this random menu as:");
-		Menu m = menuManager.randomMenu();
+		Menu m = menuManager.randomMenu(name);
 		m.setName(name);
 		menus.add(m);
 // updating the model for list
