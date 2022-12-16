@@ -73,7 +73,7 @@ public class MenuManagerGUI extends JFrame {
 		saladLabel.setText("Salad");
 
 		dessertLabel.setText("Dessert");
-
+/*
 		entreeItems.setModel(new DefaultComboBoxModel<>(menuManager.getEntreeItems()));
 
 		sideItems.setModel(new DefaultComboBoxModel<>(menuManager.getSideItems()));
@@ -81,7 +81,7 @@ public class MenuManagerGUI extends JFrame {
 		saladItems.setModel(new DefaultComboBoxModel<>(menuManager.getSaladItems()));
 
 		dessertItems.setModel(new DefaultComboBoxModel<>(menuManager.getDessertItems()));
-
+*/
 		createCustomMenuButton.setText("Create menu with these dishes");
 		createCustomMenuButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,13 +198,13 @@ public class MenuManagerGUI extends JFrame {
 			}
 		});
 
-		saveMenuButton.setText("Save to file");
+		/*saveMenuButton.setText("Save to file");
 		saveMenuButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
 				saveMenusToFille(evt);
 			}
 		});
-
+*/
 		jList1.setModel(new AbstractListModel<String>() {
 			String[] menunames = getMenuNames();
 
@@ -315,7 +315,7 @@ public class MenuManagerGUI extends JFrame {
 	private void createMinCalorieMenu(ActionEvent evt) {
 // TODO add your handling code here:
 		String name = JOptionPane.showInputDialog("What would like to name this min calorie menu as:");
-		Menu m = menuManager.minCaloriesMenu();
+		Menu m = menuManager.minCaloriesMenu(name);
 		m.setName(name);
 		menus.add(m);
 // updating the model for list
@@ -329,7 +329,7 @@ public class MenuManagerGUI extends JFrame {
 	 */
 	private void createMaxCalorieMenu(ActionEvent evt) {
 		String name = JOptionPane.showInputDialog("What would like to name this max calorie menu as:");
-		Menu m = menuManager.maxCaloriesMenu();
+		Menu m = menuManager.maxCaloriesMenu(name);
 		m.setName(name);
 		menus.add(m);
 // updating the model for list
@@ -353,7 +353,6 @@ public class MenuManagerGUI extends JFrame {
 		}
 		System.out.println("Menu : " + name);
 		Menu selectedMenu = getMenuByName(name);
-		MenuDetailsFrame md = new MenuDetailsFrame((selectedMenu.getDetailsAsString()));
 	}
 
 	/**
@@ -365,22 +364,6 @@ public class MenuManagerGUI extends JFrame {
 	private void deleteAllMenus(ActionEvent evt) {
 		menus.removeAll(menus); // remove all menus in the menulist
 		updateMenuList();
-	}
-
-	/**
-	 * executed when save to file button is clicked this file writes the contents of
-	 * menus list to file
-	 * 
-	 * @param evt
-	 */
-	private void saveMenusToFille(ActionEvent evt) {
-		try {
-			FileManager.writeMenu("output.txt", menus);
-			JOptionPane.showMessageDialog(null, "Successully written to output.txt", "FileWrite Complete",
-					JOptionPane.INFORMATION_MESSAGE);
-		} catch (IOException ex) {
-			JOptionPane.showMessageDialog(null, "Unable to write into file", "Error", JOptionPane.ERROR_MESSAGE);
-		}
 	}
 
 	/**

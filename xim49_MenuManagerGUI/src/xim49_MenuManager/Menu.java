@@ -25,7 +25,6 @@ public class Menu {
 	}
 
 	public Menu(Entree entree, Side side, Salad salad, Dessert dessert) {
-		this.name = name;
 		this.entree = entree;
 		this.side = side;
 		this.salad = salad;
@@ -90,6 +89,11 @@ public class Menu {
 	@Override
 	public String toString() {
 		return getName();
+	}
+
+	public void addItem(MenuItem side) {
+		this.side = (Side) side;
+		
 	}
 
 		

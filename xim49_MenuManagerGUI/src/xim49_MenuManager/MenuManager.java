@@ -184,8 +184,6 @@ public class MenuManager {
 
 		ArrayList<Entree> e1 = entree;
 
-// sort the arraylist in ascending order
-
 		Collections.sort(e1, new Comparator<Entree>() {
 
 			@Override
@@ -198,7 +196,7 @@ public class MenuManager {
 
 		});
 
-		Entree randomEntree = e1.get(e1.size() - 1); // getting max cal object
+		Entree randomEntree = e1.get(e1.size() - 1); 
 
 		ArrayList<Side> s1 = sides;
 
@@ -250,6 +248,26 @@ public class MenuManager {
 
 		return new Menu(randomEntree, randomSide, randomSalad, randomDessert);
 
+	}
+
+	public MenuItem getDessertItem(String selectedItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public MenuItem getSaladItem(String selectedItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public MenuItem getSideItem(String selectedItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public MenuItem getEntreeItem(String selectedItem) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
